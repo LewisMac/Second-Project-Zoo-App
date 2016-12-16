@@ -5,17 +5,17 @@ package com.example.user.zooapp;
  */
 public class Animal {
 
-    private SpeciesType species;
+    private String species;
     private String name;
     private int hunger;
 
-    public Animal(SpeciesType species, String name){
+    public Animal(String species, String name){
         this.species = species;
         this.name = name;
         this.hunger = 50;
     }
 
-    public SpeciesType getSpecies() {
+    public String getSpecies() {
         return species;
     }
 
@@ -27,7 +27,7 @@ public class Animal {
         return hunger;
     }
 
-    public void feedAnimal(int hunger) {
-        this.hunger += hunger;
+    public void feedAnimal(int food) {
+        this.hunger += food;
     }
 }

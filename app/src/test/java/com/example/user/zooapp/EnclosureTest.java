@@ -13,8 +13,8 @@ public class EnclosureTest {
 
     @Before
     public void Before(){
-        enclosure = new Enclosure(EnclosureType.AQUARIUM);
-        animal = new Animal(SpeciesType.SEAHORSE, "Fred");
+        enclosure = new Enclosure(EnclosureType.AQUARIUM.toString());
+        animal = new Animal(SpeciesType.SEAHORSE.toString(), "Fred");
     }
 
     @Test
@@ -40,6 +40,11 @@ public class EnclosureTest {
         assertEquals(1, enclosure.getNumberOfAnimalsInEnclosure());
         enclosure.removeAnimalFromEnclosure(0);
         assertEquals(0, enclosure.getNumberOfAnimalsInEnclosure());
+    }
+
+    @Test
+    public void testIdStuff(){
+        System.out.println(enclosure.getID());
     }
 
 }

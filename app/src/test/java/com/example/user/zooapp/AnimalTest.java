@@ -12,7 +12,7 @@ public class AnimalTest {
 
     @Before
     public void Before(){
-        animal = new Animal(SpeciesType.GNOME, "Fred");
+        animal = new Animal(SpeciesType.GNOME.toString(), "Fred");
     }
 
     @Test

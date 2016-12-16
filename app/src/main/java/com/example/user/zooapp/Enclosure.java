@@ -6,15 +6,24 @@ import java.util.ArrayList;
  * Created by user on 16/12/2016.
  */
 public class Enclosure {
-    private EnclosureType enclosureType;
-    private ArrayList<Animal> animalsContained;
 
-    public Enclosure(EnclosureType enclosureType){
+    private String enclosureType;
+    private ArrayList<Animal> animalsContained;
+    private int id;
+
+
+    public Enclosure(int id, String enclosureType){
+        this.id = id;
         this.enclosureType = enclosureType;
         animalsContained = new ArrayList<>();
     }
 
-    public EnclosureType getEnclosureType() {
+    public Enclosure(String enclosureType){
+        this.enclosureType = enclosureType;
+        animalsContained = new ArrayList<>();
+    }
+
+    public String getEnclosureType() {
         return enclosureType;
     }
 
@@ -32,6 +41,10 @@ public class Enclosure {
 
     public void removeAnimalFromEnclosure(int index){
         animalsContained.remove(index);
+    }
+
+    public int getID(){
+        return this.id;
     }
 
 }

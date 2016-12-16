@@ -14,7 +14,7 @@ public class ZooTest {
     @Before
     public void Before(){
         zoo = new Zoo("My first Zoo");
-        enclosure = new Enclosure(EnclosureType.GHETTO);
+        enclosure = new Enclosure(EnclosureType.GHETTO.toString());
     }
 
     @Test
@@ -27,5 +27,7 @@ public class ZooTest {
         zoo.addEnclosureToZoo(enclosure);
         assertEquals(enclosure, zoo.selectEnclosureByIndex(0));
     }
+
+
 
 }
