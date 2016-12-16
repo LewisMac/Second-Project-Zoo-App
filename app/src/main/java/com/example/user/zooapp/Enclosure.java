@@ -30,4 +30,8 @@ public class Enclosure {
         return animalsContained.size();
     }
 
+    public void removeAnimalFromEnclosure(int index){
+        animalsContained.remove(index);
+    }
+
 }

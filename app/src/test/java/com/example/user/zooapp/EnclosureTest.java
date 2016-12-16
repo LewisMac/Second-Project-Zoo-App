@@ -34,4 +34,12 @@ public class EnclosureTest {
         assertNotNull(enclosure.getAnimalByIndex(0));
     }
 
+    @Test
+    public void testCanRemoveAnimal(){
+        enclosure.addAnimalToEnclosure(animal);
+        assertEquals(1, enclosure.getNumberOfAnimalsInEnclosure());
+        enclosure.removeAnimalFromEnclosure(0);
+        assertEquals(0, enclosure.getNumberOfAnimalsInEnclosure());
+    }
+
 }
