@@ -25,4 +25,15 @@ public class AnimalTest {
         assertNotNull(animal.getSpecies());
         System.out.println(animal.getSpecies());
     }
+
+    @Test
+    public void testAnimalHungerLevel(){
+        assertEquals(50, animal.getHunger());
+    }
+
+    @Test
+    public void testFeedingAnimals(){
+        animal.feedAnimal(20);
+        assertEquals(70, animal.getHunger());
+    }
 }

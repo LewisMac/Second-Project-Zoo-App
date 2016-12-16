@@ -27,7 +27,7 @@ public class Animal {
         return hunger;
     }
 
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
+    public void feedAnimal(int hunger) {
+        this.hunger += hunger;
     }
 }
