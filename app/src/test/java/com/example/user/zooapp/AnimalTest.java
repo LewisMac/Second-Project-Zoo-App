@@ -20,5 +20,9 @@ public class AnimalTest {
         assertEquals("Fred", animal.getName());
     }
 
-
+    @Test
+    public void testAnimalSpecies(){
+        assertNotNull(animal.getSpecies());
+        System.out.println(animal.getSpecies());
+    }
 }
