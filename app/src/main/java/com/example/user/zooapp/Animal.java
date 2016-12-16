@@ -5,4 +5,29 @@ package com.example.user.zooapp;
  */
 public class Animal {
 
+    private SpeciesType species;
+    private String name;
+    private int hunger;
+
+    public Animal(SpeciesType species, String name){
+        this.species = species;
+        this.name = name;
+        this.hunger = 50;
+    }
+
+    public SpeciesType getSpecies() {
+        return species;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
 }
