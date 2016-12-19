@@ -10,26 +10,24 @@ import java.util.Map;
  */
 public class Enclosure {
 
-    private String enclosureTypeString;
-    private String enclosureType;
+    private EnclosureType enclosureType;
     private ArrayList<Animal> animalsContained;
     private int id;
 
-    public Enclosure(int id, String enclosureType){
+    public Enclosure(int id, int enclosureType){
         this.id = id;
-        this.enclosureType = enclosureType;
-        enclosureTypeString = enclosureType.toString();
+        this.enclosureType = EnclosureType.values()[enclosureType];
         animalsContained = new ArrayList<>();
     }
 
-    public Enclosure(String enclosureType){
+    public Enclosure(EnclosureType enclosureType){
         this.enclosureType = enclosureType;
         animalsContained = new ArrayList<>();
 
     }
 
     public String getEnclosureType() {
-        return enclosureType;
+        return enclosureType.toString();
     }
 
     public Animal getAnimalByIndex(int index){
@@ -40,7 +38,7 @@ public class Enclosure {
         String message = "That is not possible";
         AssignHabitats assignHabitats = new AssignHabitats();
 
-        if (assignHabitats.animalCanLiveInEnclosureType(animal.getSpecies(), this.enclosureType)){
+        if (assignHabitats.animalCanLiveInEnclosureType(animal.getSpeciesType(), this.enclosureType.toString())){
             animalsContained.add(animal);
             message = "Animal added";
         }
@@ -57,6 +55,10 @@ public class Enclosure {
 
     public int getID(){
         return this.id;
+    }
+
+    public int getEnclosureTypeOrdinal(){
+        return this.enclosureType.ordinal();
     }
 
 

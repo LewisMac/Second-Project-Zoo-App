@@ -28,39 +28,40 @@ public class Funds {
         int price = 0;
 
         switch (animal.getSpecies()){
-            case HIPPOCAMPUS:
-
-            case SELKIE:
-                price = rand.nextInt(20) + 20;
-                break;
-            case SEAHORSE:
-                price = rand.nextInt(10) + 5;
-                break;
-            case GRIFFIN:
-                price = rand.nextInt(40) + 20;
-                break;
-            case HIPPOGRIFF:
-                price = rand.nextInt(30) + 20;
-                break;
-            case YETI:
-                price = rand.nextInt(50) + 50;
-                break;
-            case DRAGON:
-                price = rand.nextInt(50) + 100;
-                break;
-            case UNICORN:
-                price = rand.nextInt(50) + 50;
-                break;
-            case WEREWOLF:
-                price = rand.nextInt(40) + 40;
-                break;
-            case GNOME:
+            case "HIPPOCAMPUS":
                 price = rand.nextInt(20) + 10;
                 break;
-            case LEPRECHAUN:
+            case "SELKIE":
                 price = rand.nextInt(20) + 20;
                 break;
-            case CENTAUR:
+            case "SEAHORSE":
+                price = rand.nextInt(10) + 5;
+                break;
+            case "GRIFFIN":
+                price = rand.nextInt(40) + 20;
+                break;
+            case "HIPPOGRIFF":
+                price = rand.nextInt(30) + 20;
+                break;
+            case "YETI":
+                price = rand.nextInt(50) + 50;
+                break;
+            case "DRAGON":
+                price = rand.nextInt(50) + 100;
+                break;
+            case "UNICORN":
+                price = rand.nextInt(50) + 50;
+                break;
+            case "WEREWOLF":
+                price = rand.nextInt(40) + 40;
+                break;
+            case "GNOME":
+                price = rand.nextInt(20) + 10;
+                break;
+            case "LEPRECHAUN":
+                price = rand.nextInt(20) + 20;
+                break;
+            case "CENTAUR":
                 price = rand.nextInt(30) + 20;
                 break;
         }
@@ -73,39 +74,40 @@ public class Funds {
         int price = 0;
 
         switch (animal.getSpecies()){
-            case HIPPOCAMPUS:
-
-            case SELKIE:
+            case "HIPPOCAMPUS":
+                price = rand.nextInt(10) + 5;
+                break;
+            case "SELKIE":
                 price = rand.nextInt(20) + 10;
                 break;
-            case SEAHORSE:
+            case "SEAHORSE":
                 price = rand.nextInt(10) + 0;
                 break;
-            case GRIFFIN:
+            case "GRIFFIN":
                 price = rand.nextInt(40) + 10;
                 break;
-            case HIPPOGRIFF:
+            case "HIPPOGRIFF":
                 price = rand.nextInt(30) + 10;
                 break;
-            case YETI:
+            case "YETI":
                 price = rand.nextInt(50) + 20;
                 break;
-            case DRAGON:
+            case "DRAGON":
                 price = rand.nextInt(50) + 50;
                 break;
-            case UNICORN:
+            case "UNICORN":
                 price = rand.nextInt(50) + 20;
                 break;
-            case WEREWOLF:
+            case "WEREWOLF":
                 price = rand.nextInt(40) + 20;
                 break;
-            case GNOME:
+            case "GNOME":
                 price = rand.nextInt(20) + 5;
                 break;
-            case LEPRECHAUN:
+            case "LEPRECHAUN":
                 price = rand.nextInt(20) + 5;
                 break;
-            case CENTAUR:
+            case "CENTAUR":
                 price = rand.nextInt(30) + 10;
                 break;
         }

@@ -13,7 +13,7 @@ public class EnclosureTest {
 
     @Before
     public void Before(){
-        enclosure = new Enclosure(EnclosureType.AQUARIUM.toString());
+        enclosure = new Enclosure(EnclosureType.AQUARIUM);
         animal = new Animal(SpeciesType.SEAHORSE, "Fred");
     }
 

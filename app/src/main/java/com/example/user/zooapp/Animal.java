@@ -7,20 +7,35 @@ import java.util.ArrayList;
  */
 public class Animal {
 
+//    private SpeciesType species;
     private SpeciesType species;
     private String name;
-    private ArrayList<EnclosureType> habitats;
     private int hunger;
-    private AssignHabitats assignHabitats = new AssignHabitats();
+    private int id;
+    private int enclosureId;
 
     public Animal(SpeciesType species, String name){
         this.species = species;
+//        this.speciesString = species;
         this.name = name;
         this.hunger = 50;
 
     }
 
-    public SpeciesType getSpecies() {
+    public Animal(int id, int species, String name, int enclosureId){
+//        this.speciesString = species;
+        this.species = SpeciesType.values()[species];
+        this.name = name;
+        this.hunger = 50;
+        this.id = id;
+        this.enclosureId = enclosureId;
+    }
+
+    public String getSpecies() {
+        return this.species.toString();
+    }
+
+    public SpeciesType getSpeciesType(){
         return this.species;
     }
 
@@ -34,5 +49,21 @@ public class Animal {
 
     public void feedAnimal(int food) {
         this.hunger += food;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public int getEnclosureId(){
+        int intId = 0;
+        if (this.enclosureId != 0) {
+             intId = this.enclosureId;
+        }
+        return intId;
+    }
+
+    public int getSpeciesTypeOrdinal(){
+        return this.species.ordinal();
     }
 }

@@ -14,7 +14,7 @@ public class ZooTest {
     @Before
     public void Before(){
         zoo = new Zoo("My first Zoo");
-        enclosure = new Enclosure(EnclosureType.GHETTO.toString());
+        enclosure = new Enclosure(EnclosureType.GHETTO);
     }
 
     @Test

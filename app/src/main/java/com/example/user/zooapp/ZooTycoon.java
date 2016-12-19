@@ -15,15 +15,7 @@ public class ZooTycoon extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         final DatabaseHandler db = ((MainApplication) getApplication()).db;
-        db.addEnclosure(new Enclosure(EnclosureType.AQUARIUM.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.ARCTIC.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.AVIARY.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.CAGE.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.CAVE.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.GHETTO.toString()));
-        db.addEnclosure(new Enclosure(EnclosureType.PADDOCK.toString()));
 
-        db.addAnimal(new Animal(SpeciesType.DRAGON, "Barnie"));
-
+        
     }
 }
