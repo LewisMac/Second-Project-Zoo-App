@@ -20,5 +20,11 @@ public class FundsTest {
         assertEquals(500, funds.getFunds());
     }
 
-    
+    @Test
+    public void testAddingRemovingFunds(){
+        funds.addRemoveFunds(-150);
+        assertEquals(350, funds.getFunds());
+        funds.addRemoveFunds(300);
+        assertEquals(650, funds.getFunds());
+    }
 }
