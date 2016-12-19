@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by user on 16/12/2016.
  */
 public class Enclosure {
-    
+
     private String enclosureTypeString;
     private String enclosureType;
     private ArrayList<Animal> animalsContained;
@@ -20,7 +20,6 @@ public class Enclosure {
         this.enclosureType = enclosureType;
         enclosureTypeString = enclosureType.toString();
         animalsContained = new ArrayList<>();
-
     }
 
     public Enclosure(String enclosureType){

@@ -58,19 +58,6 @@ public class AssignHabitats {
                     }
                 }
             }
-
-//
-
-//            System.out.println(allHabitatInformation);
-//            System.out.println(map.get(species));
-//            System.out.println(species);
-
-//            for (EnclosureType enclosureType : enclosureTypeList){
-//                System.out.println(enclosureType);
-//                if (enclosureType.toString().equals(enclosure)) {
-//                    message = true;
-//                }
-//            }
         }
         return message;
     }
