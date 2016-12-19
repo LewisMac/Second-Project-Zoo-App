@@ -23,6 +23,7 @@ public class ZooTycoon extends AppCompatActivity {
         db.addEnclosure(new Enclosure(EnclosureType.GHETTO.toString()));
         db.addEnclosure(new Enclosure(EnclosureType.PADDOCK.toString()));
 
-        db.addAnimal(new Animal(SpeciesType.DRAGON.toString(), "Barnie"));
+        db.addAnimal(new Animal(SpeciesType.DRAGON, "Barnie"));
+
     }
 }

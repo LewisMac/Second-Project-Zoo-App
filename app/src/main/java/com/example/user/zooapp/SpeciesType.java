@@ -15,6 +15,7 @@ public enum SpeciesType {
     UNICORN,
     WEREWOLF,
     GNOME,
-    LEPRECHAUN
+    LEPRECHAUN,
+    CENTAUR
 
 }

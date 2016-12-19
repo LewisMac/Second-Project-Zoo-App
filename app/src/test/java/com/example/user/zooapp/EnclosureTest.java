@@ -14,7 +14,7 @@ public class EnclosureTest {
     @Before
     public void Before(){
         enclosure = new Enclosure(EnclosureType.AQUARIUM.toString());
-        animal = new Animal(SpeciesType.SEAHORSE.toString(), "Fred");
+        animal = new Animal(SpeciesType.SEAHORSE, "Fred");
     }
 
     @Test
@@ -45,6 +45,12 @@ public class EnclosureTest {
     @Test
     public void testIdStuff(){
         System.out.println(enclosure.getID());
+    }
+
+    @Test
+    public void testCannotHoldAnimal(){
+        Animal animal2 = new Animal(SpeciesType.DRAGON, "George");
+        assertEquals("That is not possible", enclosure.addAnimalToEnclosure(animal2));
     }
 
 }

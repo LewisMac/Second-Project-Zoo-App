@@ -67,7 +67,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_ANIMAL_TYPE, animal.getSpecies());
+        values.put(KEY_ANIMAL_TYPE, animal.getSpecies().toString());
         values.put(KEY_ANIMAL_NAME, animal.getName());
 
         //insert row
