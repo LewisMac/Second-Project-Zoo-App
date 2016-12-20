@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by user on 16/12/2016.
  */
@@ -126,6 +129,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         return db.update(TABLE_ANIMALS, values, KEY_ID + " = ?",
                 new String[] { String.valueOf(animal.getId()) });
+    }
+
+    public List<Enclosure> getAllEnclosures(){
+
+        List<Enclosure> enclosureList = new ArrayList<Enclosure>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_ENCLOSURES;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Enclosure enclosure = new Enclosure(Integer.parseInt(cursor.getString(0)), Integer.parseInt(cursor.getString(1)));
+
+                // Adding enclosure to list
+                enclosureList.add(enclosure);
+            } while (cursor.moveToNext());
+        }
+
+        // return enclosure list
+        return enclosureList;
     }
 
     private Enclosure getEnclosureFromDBCursor(Cursor cursor) {

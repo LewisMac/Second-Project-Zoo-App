@@ -4,20 +4,32 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <Button
-        android:id="@+id/add_enclosure_to_database"
-        android:text="Add Enclosure to Database"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
-    <Button
-    android:id="@+id/add_animal"
-    android:text="Add Animal to Database"
-    android:layout_width="100dp"
-    android:layout_height="100dp"  />
-    <Button
-        android:id="@+id/add_animal_to_enclosure"
-        android:text="Add Animal to Database Enclosure"
-        android:layout_width="100dp"
-        android:layout_height="100dp"  />
+    <!--<Button-->
+        <!--android:id="@+id/add_enclosure_to_database"-->
+        <!--android:text="Add Enclosure to Database"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp" />-->
+    <!--<Button-->
+    <!--android:id="@+id/add_animal"-->
+    <!--android:text="Add Animal to Database"-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="100dp"  />-->
+    <!--<Button-->
+        <!--android:id="@+id/add_animal_to_enclosure"-->
+        <!--android:text="Add Animal to Database Enclosure"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"  />-->
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        />
 
 </LinearLayout>
