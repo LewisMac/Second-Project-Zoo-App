@@ -4,10 +4,20 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <ExpandableListView
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:id="@+id/expandableListView"
-        android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/add_enclosure_to_database"
+        android:text="Add Enclosure to Database"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+    <Button
+    android:id="@+id/add_animal"
+    android:text="Add Animal to Database"
+    android:layout_width="100dp"
+    android:layout_height="100dp"  />
+    <Button
+        android:id="@+id/add_animal_to_enclosure"
+        android:text="Add Animal to Database Enclosure"
+        android:layout_width="100dp"
+        android:layout_height="100dp"  />
 
 </LinearLayout>

@@ -39,6 +39,7 @@ public class Enclosure {
         AssignHabitats assignHabitats = new AssignHabitats();
 
         if (assignHabitats.animalCanLiveInEnclosureType(animal.getSpeciesType(), this.enclosureType.toString())){
+            animal.setEnclosureId(this.id);
             animalsContained.add(animal);
             message = "Animal added";
         }

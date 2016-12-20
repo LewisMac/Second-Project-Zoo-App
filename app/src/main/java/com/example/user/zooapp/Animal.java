@@ -56,11 +56,11 @@ public class Animal {
     }
 
     public int getEnclosureId(){
-        int intId = 0;
-        if (this.enclosureId != 0) {
-             intId = this.enclosureId;
-        }
-        return intId;
+        return this.enclosureId;
+    }
+
+    public void setEnclosureId(int enclosureId){
+        this.enclosureId = enclosureId;
     }
 
     public int getSpeciesTypeOrdinal(){

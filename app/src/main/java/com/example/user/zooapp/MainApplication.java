@@ -16,6 +16,8 @@ public class MainApplication extends Application{
 
 }
 
+
+
 //in main runner app
 //final Database Handler db = ((MainApplication) getApplication()).db
 //db.addEnclosure(new Enclosure(
