@@ -7,18 +7,23 @@
     <Button
         android:id="@+id/add_enclosure_to_database"
         android:text="Add Enclosure to Database"
-        android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_width="400dp"
+        android:layout_height="40dp" />
     <Button
         android:id="@+id/add_animal"
         android:text="Add Animal to Database"
-        android:layout_width="100dp"
-        android:layout_height="100dp"  />
+        android:layout_width="400dp"
+        android:layout_height="40dp"  />
     <Button
         android:id="@+id/add_animal_to_enclosure"
         android:text="Add Animal to Database Enclosure"
-        android:layout_width="100dp"
-        android:layout_height="100dp"  />
+        android:layout_width="400dp"
+        android:layout_height="40dp"  />
+    <Button
+        android:id="@+id/show_enclosures"
+        android:text="show all enclosures"
+        android:layout_width="400dp"
+        android:layout_height="40dp"  />
 
     <GridView
         android:id="@+id/gridview"

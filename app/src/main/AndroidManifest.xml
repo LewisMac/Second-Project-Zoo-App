@@ -29,6 +29,9 @@
         <activity android:name=".AddAnimalToEnclosure">
 
         </activity>
+        <activity android:name=".EnclosureDisplay">
+
+        </activity>
 
     </application>
 

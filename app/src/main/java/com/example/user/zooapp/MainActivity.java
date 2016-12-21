@@ -19,6 +19,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     Button enclosureButton;
+    Button showEnclosureButton;
     Button animalButton;
     Button addToEnclosureButton;
     ArrayList<Animal> creaturesToAddToGrid;
@@ -33,8 +34,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main);
 
         animalButton = (Button) findViewById(R.id.add_animal);
+        showEnclosureButton = (Button) findViewById(R.id.show_enclosures);
         enclosureButton = (Button) findViewById(R.id.add_enclosure_to_database);
         addToEnclosureButton = (Button) findViewById(R.id.add_animal_to_enclosure);
+
+        showEnclosureButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EnclosureDisplay.class);
+                startActivity(intent);
+            }
+        });
 
         animalButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

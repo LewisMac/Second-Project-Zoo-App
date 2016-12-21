@@ -116,40 +116,38 @@ public class ImageAdapter extends BaseAdapter {
         }
     }
 
-//    public void addCentaurToGrid(){
-//        mThumbIds.add(R.drawable.centaur);
-//    }
-//    public void addDragonToGrid(){
-//        mThumbIds.add(R.drawable.dragon);
-//    }
-//    public void addGnomeToGrid(){
-//        mThumbIds.add(R.drawable.gnome);
-//    }
-//    public void addGriffinToGrid(){
-//        mThumbIds.add(R.drawable.griffin);
-//    }
-//    public void addHippocampusToGrid(){
-//        mThumbIds.add(R.drawable.hippocampus);
-//    }
-//    public void addHippogrifToGrid(){
-//        mThumbIds.add(R.drawable.hippogriff);
-//    }
-//    public void addLeprechaunToGrid(){
-//        mThumbIds.add(R.drawable.leprechaun);
-//    }
-//    public void addSeahorseToGrid(){
-//        mThumbIds.add(R.drawable.seahorse);
-//    }
-//    public void addSelkieToGrid(){
-//        mThumbIds.add(R.drawable.selkie);
-//    }
-//    public void addUnicornToGrid(){
-//        mThumbIds.add(R.drawable.unicorn);
-//    }
-//    public void addWerewolfToGrid(){
-//        mThumbIds.add(R.drawable.werewolf);
-//    }
-//    public void addYetiToGrid(){
-//        mThumbIds.add(R.drawable.yeti);
-//    }
+    public void addAllEnclosuresFromList(ArrayList<Enclosure> enclosureArrayList){
+        for (Enclosure enclosure : enclosureArrayList){
+            switch (enclosure.getEnclosureType()){
+                case "PADDOCK":
+                    mThumbIds.add(R.drawable.paddock);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "AQUARIUM":
+                    mThumbIds.add(R.drawable.aquarium);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "AVIARY":
+                    mThumbIds.add(R.drawable.aviary);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "CAGE":
+                    mThumbIds.add(R.drawable.cage);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "CAVE":
+                    mThumbIds.add(R.drawable.cave);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "GHETTO":
+                    mThumbIds.add(R.drawable.ghetto);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+                case "ARCTIC":
+                    mThumbIds.add(R.drawable.mountain);
+                    stringArrayList.add(enclosure.getEnclosureType());
+                    break;
+            }
+        }
+    }
 }
