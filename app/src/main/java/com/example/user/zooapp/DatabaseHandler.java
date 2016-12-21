@@ -97,6 +97,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return enclosure;
     }
 
+    public Enclosure getEnclosureByType(int enclosureType){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_ENCLOSURES, new String[] {KEY_ID, KEY_ENCLOSURE_TYPE_ORDINAL}, KEY_ENCLOSURE_TYPE_ORDINAL + "=?",
+                new String[] {String.valueOf(enclosureType)}, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Enclosure enclosure = getEnclosureFromDBCursor(cursor);
+        return enclosure;
+    }
+
     public int updateEnclosure(Enclosure enclosure) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -108,10 +120,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public Animal getAnimal(int id){
         SQLiteDatabase db = this.getReadableDatabase();
 
-
-
         Cursor cursor = db.query(TABLE_ANIMALS, new String[] {KEY_ID, KEY_ANIMAL_NAME, KEY_ANIMAL_TYPE_ORDINAL, KEY_ENCLOSURE_ANIMAL_ID}, KEY_ID + "=?",
                 new String[] {String.valueOf(id)}, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Animal animal = getAnimalFromDBCursor(cursor);
+        return animal;
+    }
+
+    public Animal getAnimalByName(String name){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_ANIMALS, new String[] {KEY_ID, KEY_ANIMAL_NAME, KEY_ANIMAL_TYPE_ORDINAL, KEY_ENCLOSURE_ANIMAL_ID}, KEY_ANIMAL_NAME + "=?",
+                new String[] {String.valueOf(name)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -153,6 +175,35 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // return enclosure list
         return enclosureList;
     }
+
+    public List<Animal> getAllAnimals(){
+
+        List<Animal> animalList = new ArrayList<Animal>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_ANIMALS;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                int id = Integer.parseInt(cursor.getString(0));
+                int species = Integer.parseInt(cursor.getString(2));
+                String name = cursor.getString(1);
+                int enclosure = Integer.parseInt(cursor.getString(3));
+                Animal animal = new Animal(id, species, name, enclosure);
+
+                // Adding enclosure to list
+                animalList.add(animal);
+            } while (cursor.moveToNext());
+        }
+
+        // return enclosure list
+        return animalList;
+    }
+
+
 
     private Enclosure getEnclosureFromDBCursor(Cursor cursor) {
 

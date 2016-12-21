@@ -1,5 +1,6 @@
 package com.example.user.zooapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by user on 16/12/2016.
  */
@@ -17,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Button enclosureButton;
     Button animalButton;
     Button addToEnclosureButton;
+    ArrayList<Animal> creaturesToAddToGrid;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,19 +31,61 @@ public class MainActivity extends AppCompatActivity {
         final DatabaseHandler db = ((MainApplication) getApplication()).db;
 
         setContentView(R.layout.main);
+
+        animalButton = (Button) findViewById(R.id.add_animal);
+        enclosureButton = (Button) findViewById(R.id.add_enclosure_to_database);
+        addToEnclosureButton = (Button) findViewById(R.id.add_animal_to_enclosure);
+
+        animalButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddAnimal.class);
+                startActivity(intent);
+            }
+        });
+
+        enclosureButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddEnclosure.class);
+                startActivity(intent);
+            }
+        });
+
+        addToEnclosureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddAnimalToEnclosure.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageAdapter imageAdapter = new ImageAdapter(this);
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        gridview.setAdapter(imageAdapter);
+        addCreaturesToGridView();
+        imageAdapter.addAllAnimalsFromList(creaturesToAddToGrid);
+
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-//                Toast.makeText(HelloGridView.this, "" + position,
-//                        Toast.LENGTH_SHORT).show();
+
             }
         });
+    }
+
+    public void addCreaturesToGridView(){
+
+        final DatabaseHandler db = ((MainApplication) getApplication()).db;
+        creaturesToAddToGrid = new ArrayList<>();
+        for (Animal animal : db.getAllAnimals()){
+            if (animal != null)
+            creaturesToAddToGrid.add(animal);
+        }
+    }
+
 
 //        enclosureButton = (Button)findViewById(R.id.add_enclosure_to_database);
-//        animalButton = (Button)findViewById(R.id.add_animal);
+
 //        addToEnclosureButton = (Button)findViewById(R.id.add_animal_to_enclosure);
 //
 //        enclosureButton.setOnClickListener(new View.OnClickListener() {
@@ -64,5 +112,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+
 }

@@ -18,6 +18,18 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AddAnimal">
+
+        </activity>
+
+        <activity android:name=".AddEnclosure">
+
+        </activity>
+
+        <activity android:name=".AddAnimalToEnclosure">
+
+        </activity>
+
     </application>
 
 </manifest>
