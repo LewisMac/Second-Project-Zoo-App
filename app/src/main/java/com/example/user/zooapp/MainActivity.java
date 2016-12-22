@@ -1,5 +1,6 @@
 package com.example.user.zooapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button animalButton;
     Button addToEnclosureButton;
     ArrayList<Animal> creaturesToAddToGrid;
-
+    Context context;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -73,11 +75,14 @@ public class MainActivity extends AppCompatActivity {
         addCreaturesToGridView();
         imageAdapter.addAllAnimalsFromList(creaturesToAddToGrid);
 
-
+        context = getApplicationContext();
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-
+                TextView textView = (TextView) v.findViewById(R.id.gridtext);
+                String name = (String) textView.getText();
+                Toast toastno = Toast.makeText(context, name, Toast.LENGTH_SHORT);
+                toastno.show();
             }
         });
     }
